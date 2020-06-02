@@ -71,13 +71,26 @@
 
     .mapboxgl-popup-anchor-top>.mapboxgl-popup-tip {
       border-bottom-color: rgb(61, 59, 59);
-    }
+	}
+
+	.rhs {
+		position: fixed;
+		right: 0; top: 0; bottom: 0;
+		background-color: rgba(0,0,0,0.88);
+		padding: 5rem;
+		width: 30%;
+	}
   </style>
 </head>
 
 <body>
 
   <div id='map'></div>
+
+  <div id="rhs" class="rhs">
+	Content
+  </div>
+
   <script>
 
     var transformRequest = (url, resourceType) => {
@@ -148,8 +161,10 @@
                 coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
               }
 
-              //add Popup to map
+			  // RHS
+			  $('#rhs').html(description);
 
+              // Add Popup to map
               new mapboxgl.Popup()
                 .setLngLat(coordinates)
                 .setHTML(description)
