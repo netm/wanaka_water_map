@@ -169,10 +169,10 @@
 
 							// Set text
 							var description = `<h3>` + e.features[0].properties.Title + `</h3>`;
-							//var description = `<h3>` + e.features[0].properties.Title + `</h3>` + `<h4>` + `<b>` + `Description: ` + `</b>` + e.features[0].properties.Description + `</h4>` + `<h4>` + `<b>` + `More stuff: ` + `</b>` + e.features[0].properties.MarkerType + `</h4>`;
+							var rhsDescription = `<h3>` + e.features[0].properties.Title + `</h3>` + `<h4>` + `<b>` + `Description: ` + `</b>` + e.features[0].properties.Description + `</h4>` + `<h4>` + `<b>` + `More stuff: ` + `</b>` + e.features[0].properties.MarkerType + `</h4>`;
 
 							// RHS Context Area
-							$('#rhsContent').html(description);
+							$('#rhsContent').html(rhsDescription);
 
 							// Ensure that if the map is zoomed out such that multiple
 							// copies of the feature are visible, the popup appears
