@@ -19,8 +19,9 @@
     #map {
       position: absolute;
       top: 0;
-      bottom: 0;
-      width: 100%;
+	  bottom: 0;
+	  left: 0;
+      width: 50%;
     }
 
     /* Popup styling */
@@ -74,11 +75,15 @@
 	}
 
 	.rhs {
-		position: fixed;
+		position: absolute;
 		right: 0; top: 0; bottom: 0;
 		background-color: rgba(0,0,0,0.88);
-		padding: 5rem;
-		width: 30%;
+		width: 50%;
+		color: #fff;
+		font-family: Arial, Helvetica, sans-serif;
+	}
+	.rhs .liner {
+		margin: 5rem;
 	}
   </style>
 </head>
@@ -87,8 +92,8 @@
 
   <div id='map'></div>
 
-  <div id="rhs" class="rhs">
-	Content
+  <div class="rhs">
+	<div id="rhsContent" class="liner">Welcome</div>
   </div>
 
   <script>
@@ -109,7 +114,7 @@
       container: 'map', // container id
       style: 'mapbox://styles/mapbox/streets-v11', //stylesheet location
       center: [169.1364637,-44.6941691], // starting position
-      zoom: 3,// starting zoom
+      zoom: 6,// starting zoom
       transformRequest: transformRequest
     });
 
@@ -162,7 +167,7 @@
               }
 
 			  // RHS
-			  $('#rhs').html(description);
+			  $('#rhsContent').html(description);
 
               // Add Popup to map
               new mapboxgl.Popup()
