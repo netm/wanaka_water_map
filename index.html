@@ -157,7 +157,7 @@
               //set popup text
               //You can adjust the values of the popup to match the headers of your CSV.
               // For example: e.features[0].properties.Name is retrieving information from the field Name in the original CSV.
-              var description = `<h3>` + e.features[0].properties.Name + `</h3>` + `<h4>` + `<b>` + `Address: ` + `</b>` + e.features[0].properties.Address + `</h4>` + `<h4>` + `<b>` + `Phone: ` + `</b>` + e.features[0].properties.Phone + `</h4>`;
+              var description = `<h3>` + e.features[0].properties.Name + `</h3>` + `<h4>` + `<b>` + `Description: ` + `</b>` + e.features[0].properties.Description + `</h4>` + `<h4>` + `<b>` + `More stuff: ` + `</b>` + e.features[0].properties.MarkerType + `</h4>`;
 
               // Ensure that if the map is zoomed out such that multiple
               // copies of the feature are visible, the popup appears
@@ -170,10 +170,10 @@
 			  $('#rhsContent').html(description);
 
               // Add Popup to map
-              new mapboxgl.Popup()
-                .setLngLat(coordinates)
-                .setHTML(description)
-                .addTo(map);
+            //   new mapboxgl.Popup()
+            //     .setLngLat(coordinates)
+            //     .setHTML(description)
+            //     .addTo(map);
             });
 
             // Change the cursor to a pointer when the mouse is over the places layer.
